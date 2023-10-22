@@ -55,5 +55,9 @@ app.get('./favicon.ico', (req, res) => {
   res.sendFile(path.resolve(__dirname, '/favicon.ico'));
 });
 
+app.get("/", (req, res) => {
+    res.setHeader("Access-Control-Allow-Credentials","true");
+    res.send("API is running..");
+  });
 
 app.listen(3001, () => console.log("Server started on port 3001"));
