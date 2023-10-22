@@ -7,7 +7,7 @@ const app = express();
 app.use(express.json());
 app.use(cors());
 
-mongoose.connect("mongodb://127.0.0.1:27017/fullstacktodo", {
+mongoose.connect("mongodb://0.0.0.0:27017/fullstacktodo", {
     useNewUrlParser: true,
     useUnifiedTopology: true
 }).then(() => console.log("Connected to DataBase")).catch(console.error);
