@@ -4,7 +4,7 @@
   "description": "API for MERN Task Tracker",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon server.js"
+    "start": "node server.js"
   },
   "author": "Michael Crowley",
   "license": "ISC",
