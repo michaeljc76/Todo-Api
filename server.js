@@ -52,7 +52,7 @@ const path = require('path');
 
 app.get('./favicon.ico', (req, res) => {
   // Use actual relative path to your .ico file here
-  res.sendFile(path.resolve(__dirname, '/favicon.ico'));
+  res.sendFile(path.resolve(__dirname, './favicon.ico'));
 });
 
 app.get("/", (req, res) => {
