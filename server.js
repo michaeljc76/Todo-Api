@@ -18,7 +18,6 @@ app.get("/todos", async (req, res) => {
     const todos = await Todo.find();
     
     res.setHeader("Access-Control-Allow-Credentials", "true");
-    res.setHeader("Content-Security-Policy", "script-src 'self' https://todo-api-lntg.onrender.com/favicon.ico");
     res.json(todos);
 });
 
@@ -46,8 +45,15 @@ app.get('/todo/complete/:id', async (req, res) => {
     todo.save();
     
     res.setHeader("Access-Control-Allow-Credentials", "true");
-    res.setHeader("Content-Security-Policy", "script-src 'self' https://todo-api-lntg.onrender.com/favicon.ico");
     res.json(todo);
 })
+
+const path = require('path');
+
+app.get('/favicon.ico', (req, res) => {
+  // Use actual relative path to your .ico file here
+  res.sendFile(path.resolve(__dirname, '/favicon.ico'));
+});
+
 
 app.listen(3001, () => console.log("Server started on port 3001"));
