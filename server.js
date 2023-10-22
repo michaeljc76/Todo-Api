@@ -50,7 +50,7 @@ app.get('/todo/complete/:id', async (req, res) => {
 
 const path = require('path');
 
-app.get('/favicon.ico', (req, res) => {
+app.get('./favicon.ico', (req, res) => {
   // Use actual relative path to your .ico file here
   res.sendFile(path.resolve(__dirname, '/favicon.ico'));
 });
