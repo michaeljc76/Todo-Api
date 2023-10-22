@@ -16,7 +16,8 @@ const Todo = require("./models/Todo");
 
 app.get("/todos", async (req, res) => {
     const todos = await Todo.find();
-
+    
+    res.setHeader("Access-Control-Allow-Credentials", "true");
     res.json(todos);
 });
 
@@ -42,7 +43,8 @@ app.get('/todo/complete/:id', async (req, res) => {
     todo.complete = !todo.complete;
 
     todo.save();
-
+    
+    res.setHeader("Access-Control-Allow-Credentials", "true");
     res.json(todo);
 })
 
