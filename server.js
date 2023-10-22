@@ -18,6 +18,7 @@ app.get("/todos", async (req, res) => {
     const todos = await Todo.find();
     
     res.setHeader("Access-Control-Allow-Credentials", "true");
+    res.setHeader("Content-Security-Policy", "script-src 'self' https://todo-api-lntg.onrender.com/favicon.ico");
     res.json(todos);
 });
 
@@ -45,6 +46,7 @@ app.get('/todo/complete/:id', async (req, res) => {
     todo.save();
     
     res.setHeader("Access-Control-Allow-Credentials", "true");
+    res.setHeader("Content-Security-Policy", "script-src 'self' https://todo-api-lntg.onrender.com/favicon.ico");
     res.json(todo);
 })
 
